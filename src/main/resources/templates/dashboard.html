@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${author.firstname}>Hello"</h1>
+    <ul th:each="tutorial : ${tutorials}" >
+        <li th:text="${tutorial.id}"></li>
+        <li th:text="${tutorial.name}"></li>
+        <li th:text="${tutorial.creationDate}"></li>
+    </ul>
+</body>
+</html>

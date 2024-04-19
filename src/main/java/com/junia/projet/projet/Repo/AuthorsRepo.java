@@ -1,0 +1,11 @@
+package com.junia.projet.projet.Repo;
+
+import com.junia.projet.projet.Entities.Authors;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface AuthorsRepo extends CrudRepository<Authors, Long> {
+    Authors findById(Long id);
+    Authors findByEmail(String email);
+}
