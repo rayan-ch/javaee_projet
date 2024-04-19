@@ -17,6 +17,9 @@ public class Tutorials {
     @JoinColumn(name = "author_id")
     private Authors author;
 
+    public Tutorials() {
+    }
+
     public Tutorials(Long id, Authors author, LocalDate date, String description, String title) {
         this.id = id;
         this.author = author;

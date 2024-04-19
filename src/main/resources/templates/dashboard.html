@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+    table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table td, table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    table tr:nth-child(even){background-color: #f2f2f2;}
+
+    table tr:hover {background-color: #ddd;}
+
+    table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Dashboard</title>
 </head>
 <body>
-    <h1 th:text="${author.firstname}>Hello"</h1>
-    <ul th:each="tutorial : ${tutorials}" >
-        <li th:text="${tutorial.id}"></li>
-        <li th:text="${tutorial.name}"></li>
-        <li th:text="${tutorial.creationDate}"></li>
-    </ul>
+    <h1 th:text="${author.firstname}">Hello</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+
+        <tr th:each="tutorial : ${tutorials}">
+            <td th:text="${tutorial.id}"></td>
+            <td th:text="${tutorial.title}"></td>
+            <td th:text="${tutorial.description}"></td>
+        </tr>
+    </table>
 </body>
 </html>

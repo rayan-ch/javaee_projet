@@ -61,10 +61,13 @@ public class Login {
     public String Dashboard(Model model, HttpSession session) {
         Long id = (Long) session.getAttribute("author_id");
         if (id != null) {
-            Authors author = authorsRepo.findById(id);
+            Authors author = authorsRepo.findAllById(id);
+            System.out.println(author.getFirstname());
             List<Tutorials> tutorials = tutorialsRepo.findByAuthorId(id);
-            model.addAttribute("tutorials", tutorials)
-            .addAttribute("author", author);
+            model.addAttribute("tutorials", tutorials);
+            model.addAttribute("author", author);
+        } else {
+            return "redirect:/connexion";
         }
         return "dashboard";
     }
