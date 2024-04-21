@@ -32,7 +32,7 @@ public class Login {
     @PostMapping("/inscription")
     public String Inscrire(Authors author) {
         authorsRepo.save(author);
-        return "redirect:/inscription";
+        return "redirect:/connexion";
     }
 
     @GetMapping("/connexion")

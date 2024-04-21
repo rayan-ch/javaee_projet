@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Edit tutorial</title>
 </head>
 <body>
+    <a th:href="@{/dashboard}">Go back to Dashboard</a>
+    <form th:action="@{'/dashboard/edit/' + ${tutorial.id}}" th:object="${tutorial}" method="post">
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Edit</th>
+            </tr>
 
+            <tr>
+                <td><input type="text" th:field="*{title}"/></td>
+                <td><input type="text" th:field="*{description}"/></td>
+                <td><button type="submit">Save</button></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>

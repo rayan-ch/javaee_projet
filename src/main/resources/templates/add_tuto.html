@@ -5,6 +5,14 @@
     <title>Title</title>
 </head>
 <body>
+    <form th:action="@{/dashboard/add}" th:object="${newTutorial}" method="post">
+        <label for="title">Title</label>
+        <input id="title" type="text" placeholder="Title" th:field="*{title}">
 
+        <label for="description">Description</label>
+        <input id="description" type="text" placeholder="Description" th:field="*{description}">
+
+        <button type="submit">Ajouter</button>
+    </form>
 </body>
 </html>

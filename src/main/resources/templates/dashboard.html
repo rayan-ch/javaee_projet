@@ -31,18 +31,25 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <h1 th:text="${author.firstname}">Hello</h1>
+    <h1 th:text="'Hello ' +  ${author.firstname}"></h1>
+    <a th:href="@{/dashboard/add}">Add tutorial</a>
     <table>
         <tr>
             <th>Id</th>
             <th>Title</th>
             <th>Description</th>
+            <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
 
         <tr th:each="tutorial : ${tutorials}">
             <td th:text="${tutorial.id}"></td>
             <td th:text="${tutorial.title}"></td>
             <td th:text="${tutorial.description}"></td>
+            <td th:text="${tutorial.date}"></td>
+            <td><a th:href="@{'/dashboard/edit/' + ${tutorial.id}}">Edit</a></td>
+            <td><a th:href="@{'/dashboard/delete/' + ${tutorial.id}}">Delete</a></td>
         </tr>
     </table>
 </body>
